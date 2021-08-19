@@ -7,18 +7,25 @@
 </head>
 <body>
 
-<!--    <form:form action="processForm" modelAttribute="student">-->
-<!--        First name: <form:input path="firstName" />-->
-<!--        <br><br>-->
-<!--        Last name: <form:input path="lastName" />-->
-<!--        <br><br>-->
-<!--        <input type="submit" value="Submit">-->
 
-<!--    </form:form>-->
 <form action="#" th:action="@{/student/processForm}" th:object="${student}" method="post">
     First name: <input type="text" th:field="*{firstName}" />
     <br><br>
     Last name: <input type="text" th:field="*{lastName}" />
+    <br><br>
+    Please select your country:
+    <select th:field="*{country}">
+        <option th:value="'Ukraine'" th:text="Ukraine"></option>
+        <option th:value="'Germany'" th:text="Germany"></option>
+        <option th:value="'Spain'" th:text="Spain"></option>
+    </select>
+
+    <br><br>
+    Please select your countryOptions:
+    <select th:field="*{countryDropDown}">
+        <option th:each="countryOptions : ${student.countryOptions}" th:value="${countryOptions.value}" th:text="${countryOptions.key}"></option>
+    </select>
+
     <br><br>
     <input th:type="submit" th:value="Submit" />
 </form>
