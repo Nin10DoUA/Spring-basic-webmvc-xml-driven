@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Confirmation Page</title>
+</head>
+<body>
+The student is confirmed, First Name: <h1 th:text="${student.firstName}" /> and Last Name: <h1 th:text="${student.lastName}" />
+<br>
+<br>
+<br>
+The student is confirmed, First Name: <p th:text="${student.firstName}" /> and Last Name: <p th:text="${student.lastName}" />
+<br>
+<br>
+<br>
+The student is confirmed, First Name: <div th:text="${student.firstName}" /> and Last Name: <div th:text="${student.lastName}" />
+
+<br>
+<br>
+<br>
+The student is confirmed, First Name: <span th:text="${student.firstName}" /> and Last Name: <span th:text="${student.lastName}" />
+
+</body>
+</html>
