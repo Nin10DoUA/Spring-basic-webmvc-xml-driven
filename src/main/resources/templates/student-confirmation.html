@@ -12,6 +12,12 @@ First Name: <span style="color:blue;font-weight:bold" th:text="${student.firstNa
 Last Name: <span style="color:blue;font-weight:bold" th:text="${student.lastName}" /> <br>
 From: <span style="color:blue;font-weight:bold" th:text="${student.country}" /> <br>
 Country drop down: <span style="color:blue;font-weight:bold" th:text="${student.countryDropDown}" /> <br>
+Fav Language: <span style="color:blue;font-weight:bold" th:text="${student.favouriteLanguage}" /> <br>
+<ul>
+    <li th:each="os : ${student.operationSystem}">
+        Supported OS: <span style="color:blue;font-weight:bold" th:text="${os}"></span>
+    </li>
+</ul>
 
 </body>
 </html>

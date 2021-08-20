@@ -9,7 +9,7 @@
 
 
 <form action="#" th:action="@{/student/processForm}" th:object="${student}" method="post">
-    First name: <input type="text" th:field="*{firstName}" />
+    First name: <input type="text" th:field="*{firstName}" placeholder="enter your name ..."/>
     <br><br>
     Last name: <input type="text" th:field="*{lastName}" />
     <br><br>
@@ -25,7 +25,25 @@
     <select th:field="*{countryDropDown}">
         <option th:each="countryOptions : ${student.countryOptions}" th:value="${countryOptions.value}" th:text="${countryOptions.key}"></option>
     </select>
+    <br><br>
+    Choose your favourite language:
+    <input type="radio" checked="checked" th:field ="*{favouriteLanguage}" th:value="Java" th:text="Java">
+    <input type="radio" th:field ="*{favouriteLanguage}" th:value="Phyton" th:text="Phyton">
+    <input type="radio" th:field ="*{favouriteLanguage}" th:value="'C'+'++'" th:text="'C'+'++'">
+    <br><br>
+    Choose your OS:
+    <ul>
+        <li>
+            <input type="checkbox" checked="checked" th:field="*{operationSystem}" th:text="Linux" th:value="Linux">
+        </li>
+        <li>
+            <input type="checkbox" th:field="*{operationSystem}" th:text="Windows" th:value="Windows">
+        </li>
+        <li>
+            <input type="checkbox" th:field="*{operationSystem}" th:text="MacOS" th:value="MacOS">
+        </li>
 
+    </ul>
     <br><br>
     <input th:type="submit" th:value="Submit" />
 </form>
